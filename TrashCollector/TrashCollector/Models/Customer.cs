@@ -14,12 +14,13 @@ namespace TrashCollector.Models
     {
         [Key]
         public int CustomerId { get; set; }
-        public string Name { get; set; }        
+        public string Name { get; set; }
         public DateTime PickupDay { get; set; }
         public DateTime ExtraPickupDay { get; set; }
         public int ZipCode { get; set; }
         public int Balance { get; set; }
-        public bool IsSuspended { get; set; }
+        public DateTime StartSuspension { get; set; }
+        public DateTime EndSuspension { get; set; }
 
         [ForeignKey("IdentityUser")]
         public string IdentityUserId { get; set; }
