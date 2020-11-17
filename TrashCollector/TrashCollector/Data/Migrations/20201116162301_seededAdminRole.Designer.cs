@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrashCollector.Data;
 
 namespace TrashCollector.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201116162301_seededAdminRole")]
+    partial class seededAdminRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,17 +50,10 @@ namespace TrashCollector.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1aa4a088-18e1-4e83-8c9d-334a3d2ad9d9",
-                            ConcurrencyStamp = "d19abd14-6122-4f75-8ec4-fcaeeadb25a2",
-                            Name = "Customer",
-                            NormalizedName = "CUSTOMER"
-                        },
-                        new
-                        {
-                            Id = "7352b466-758e-4216-bd00-db532884708d",
-                            ConcurrencyStamp = "b3d27271-c9cd-4aad-a8e1-14f1f217aa68",
-                            Name = "Employee",
-                            NormalizedName = "EMPLOYEE"
+                            Id = "b0387862-012e-4d8d-bd07-452acc4f2f94",
+                            ConcurrencyStamp = "c12d59dd-a890-4044-92c4-3eb7f3a1abb3",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
                         });
                 });
 

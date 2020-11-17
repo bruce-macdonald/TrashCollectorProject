@@ -21,10 +21,15 @@ namespace TrashCollector.Data
             builder.Entity<IdentityRole>().HasData(
             new IdentityRole
             {
-                Name = "Admin",
-                NormalizedName = "ADMIN"
-            }
-            );
+                Name = "Customer",
+                NormalizedName = "CUSTOMER"
+            },
+            new IdentityRole
+            {
+                Name = "Employee",
+                NormalizedName = "EMPLOYEE"
+            });
+            
         }
 
     }
