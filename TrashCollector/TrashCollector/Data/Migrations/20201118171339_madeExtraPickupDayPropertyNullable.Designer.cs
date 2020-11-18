@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrashCollector.Data;
 
 namespace TrashCollector.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201118171339_madeExtraPickupDayPropertyNullable")]
+    partial class madeExtraPickupDayPropertyNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,14 +51,14 @@ namespace TrashCollector.Data.Migrations
                         new
                         {
                             Id = "3dc683b6-b2d0-4dec-8643-dcbf85a7fe39",
-                            ConcurrencyStamp = "8f67a4f8-d19b-4532-8f06-10586f3552fa",
+                            ConcurrencyStamp = "5e8d250b-7ccf-45a8-ab9f-352c1c4d573d",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
                             Id = "7e273606-8c4a-451c-969e-48a12762bc70",
-                            ConcurrencyStamp = "8636c5e2-49e7-48d6-9e66-05448564d09a",
+                            ConcurrencyStamp = "c10f7264-7e0f-4389-b524-8e1e37af4da7",
                             Name = "Employee",
                             NormalizedName = "EMPLOYEE"
                         });
@@ -279,11 +281,11 @@ namespace TrashCollector.Data.Migrations
                     b.Property<string>("IdentityUserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("MyProperty")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ZipCode")
-                        .HasColumnType("int");
 
                     b.HasKey("EmployeeId");
 
