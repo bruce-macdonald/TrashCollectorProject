@@ -20,11 +20,13 @@ namespace TrashCollector.Controllers
         //GET: EmployeesController
         public ActionResult Index()
         {
+            
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             Employee employee = db.Employees.Where(e => e.IdentityUserId == userId).FirstOrDefault();
             if (employee != null)
             {
-                var pickups = db.Customers.Where(c => c.PickupDay == DateTime.Today.DayOfWeek.ToString() && c.ZipCode == employee.ZipCode);
+                
+                var pickups = db.Customers.Where(c => c.PickupDay == DateTime.Today.DayOfWeek.ToString() && c.ZipCode == employee.ZipCode).FirstOrDefault();
                 return View(pickups);
             }
             else
