@@ -26,11 +26,13 @@ namespace TrashCollector.Controllers
         //}
         public ActionResult Index(int id)
         {
+            CustomerEmployeeViewModel customerEmployeeViewModel = new CustomerEmployeeViewModel();
+            
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             Customer customer = db.Customers.Where(c => c.IdentityUserId == userId).FirstOrDefault();
             if (customer != null)
             {
-                return RedirectToAction(nameof(Details));
+                return RedirectToAction(nameof(CustomerEmployeeViewModel));
             }
             else
             {

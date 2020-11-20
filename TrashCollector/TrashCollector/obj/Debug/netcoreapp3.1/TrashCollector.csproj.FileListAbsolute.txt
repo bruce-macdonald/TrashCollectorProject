@@ -200,3 +200,4 @@ D:\DCC Projects\TrashCollector\TrashCollector\TrashCollector\obj\Debug\netcoreap
 D:\DCC Projects\TrashCollector\TrashCollector\TrashCollector\obj\Debug\netcoreapp3.1\TrashCollector.pdb
 D:\DCC Projects\TrashCollector\TrashCollector\TrashCollector\obj\Debug\netcoreapp3.1\TrashCollector.genruntimeconfig.cache
 D:\DCC Projects\TrashCollector\TrashCollector\TrashCollector\obj\Debug\netcoreapp3.1\TrashCollector.csprojAssemblyReference.cache
+D:\DCC Projects\TrashCollector\TrashCollector\TrashCollector\obj\Debug\netcoreapp3.1\Razor\Views\Employees\Index.cshtml.g.cs

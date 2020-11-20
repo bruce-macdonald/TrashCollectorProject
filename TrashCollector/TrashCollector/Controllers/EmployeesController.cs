@@ -20,14 +20,21 @@ namespace TrashCollector.Controllers
         //GET: EmployeesController
         public ActionResult Index()
         {
-            
+            // GOAL: Send a list of all customers in Employee's zip code with a pick up day of today
+            // Find logged in user
+            // Find out what today is
+
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             Employee employee = db.Employees.Where(e => e.IdentityUserId == userId).FirstOrDefault();
             if (employee != null)
             {
-                
-                var pickups = db.Customers.Where(c => c.PickupDay == DateTime.Today.DayOfWeek.ToString() && c.ZipCode == employee.ZipCode).FirstOrDefault();
-                return View(pickups);
+                var today = DateTime.Today.DayOfWeek.ToString();
+                if (db.Customers != null)
+                {
+                    var pickups = db.Customers.Where(c => c.PickupDay == today && c.ZipCode == employee.ZipCode).ToList();
+                    return View(pickups);
+                }
+                return View("Details");
             }
             else
             {
